@@ -7,18 +7,16 @@ type ButtonType = "primary" | "secondary";
  * Props and methods
  */
 interface ButtonProps {
-    /** Type asd */
+    /** The style of the button. */
     type?: ButtonType,
-    /** Type asd */
+    /** Whether the button can be used or not. */
     disabled?: boolean,
-    /** Type asd */
+    /** What the button contains. */
     children?: any,
 }
 
 /**
  * Description of the button component here
- * @param props
- * @constructor
  */
 export const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     const { type, disabled, children } = props;
@@ -34,6 +32,7 @@ export const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
 };
 
 Button.defaultProps = {
-    type: "primary"
+    type: "primary",
+    disabled: false,
 };
 
