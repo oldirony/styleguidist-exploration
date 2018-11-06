@@ -4,7 +4,7 @@ import './button.css'
 type ButtonType = "primary" | "secondary";
 
 /**
- * PRops and methods
+ * Props and methods
  */
 interface ButtonProps {
     /** Type asd */
@@ -16,7 +16,9 @@ interface ButtonProps {
 }
 
 /**
- * Button
+ * Description of the button component here
+ * @param props
+ * @constructor
  */
 export const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     const { type, disabled, children } = props;

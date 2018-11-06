@@ -1,7 +1,25 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-
 module.exports = {
   propsParser: require("react-docgen-typescript").parse,
+  sections: [
+    {
+      name: 'Introduction',
+      content: 'docs/introduction.md'
+    },
+    {
+      name: 'Documentation',
+      sections: [
+        {
+          content: 'docs/installation.md',
+          description: 'The description for the installation section'
+        }
+      ]
+    },
+    {
+      name: 'UI Components',
+      content: 'docs/ui.md',
+      components: 'src/components/**/*.tsx',
+      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      usageMode: 'expand' // 'hide' | 'collapse' | 'expand'
+    }
+  ]
 };
