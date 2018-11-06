@@ -1,0 +1,21 @@
+.Button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Button[disabled] {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.Button.primary {
+    background: tomato;
+    color: white;
+}
+
+.Button.secondary {
+    background: #666;
+    color: white;
+}
