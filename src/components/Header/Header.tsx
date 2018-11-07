@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'react-emotion';
+import { withTheme } from "../../themes";
 
 interface HeaderLinkProps {
     href: string;
@@ -12,14 +13,14 @@ interface HeaderProps {
     homepageLink: string;
 }
 
-const HeaderLink = styled('a')<HeaderLinkProps>`
-    color: tomato;
+const HeaderLink = withTheme(styled('a')<HeaderLinkProps>`
+    color: ${props => props.theme.accentColor};
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
     text-decoration: none;
     font-family: Roboto, sans-serif;
-`;
+`);
 
 const HeaderComponent = styled('header')`
   border-bottom: 1px;
