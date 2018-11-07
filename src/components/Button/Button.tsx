@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styled from 'react-emotion';
+import { withTheme } from '../../themes';
 import './button.css'
 
 type ButtonType = "primary" | "secondary";
@@ -15,6 +17,20 @@ interface ButtonProps {
     children?: any,
 }
 
+const ButtonComponent = withTheme(styled('button')<ButtonProps>`
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: ${props => props.type === 'primary' ? props.theme.foregroundColor : props.theme.backgroundColor };
+    background: ${props => props.type === 'primary' ? props.theme.backgroundColor : props.theme.foregroundColor};
+    
+    &[disabled] {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+`);
+
 /**
  * Description of the button component here
  */
@@ -22,12 +38,12 @@ export const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     const { type, disabled, children } = props;
 
     return (
-        <button
+        <ButtonComponent
             disabled={disabled}
-            className={`Button ${type === "primary" ? "primary": "secondary"}`}
+            type={type}
         >
             {children}
-        </button>
+        </ButtonComponent>
     )
 };
 

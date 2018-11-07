@@ -1,5 +1,10 @@
+const path = require('path');
+
 module.exports = {
-  propsParser: require("react-docgen-typescript").parse,
+  propsParser: require("react-docgen-typescript").withDefaultConfig().parse,
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
+  },
   sections: [
     {
       name: 'Introduction',
