@@ -83,7 +83,8 @@
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
-      "react-app-polyfill/jsdom"
+      "react-app-polyfill/jsdom",
+      "./src/setupTests.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
@@ -115,15 +116,22 @@
       "web.jsx",
       "jsx",
       "node"
-    ]
+    ],
+    "preset": "ts-jest"
   },
   "babel": {
     "presets": [
       "react-app"
     ],
-    "plugins": ["@babel/plugin-syntax-dynamic-import"]
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ]
   },
   "devDependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0"
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@types/jest": "^23.3.9",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "ts-jest": "^23.10.4"
   }
 }
