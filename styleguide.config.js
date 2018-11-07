@@ -24,15 +24,6 @@ module.exports = {
       content: 'docs/introduction.md'
     },
     {
-      name: 'Documentation',
-      sections: [
-        {
-          content: 'docs/installation.md',
-          description: 'The description for the installation section'
-        }
-      ]
-    },
-    {
       name: 'UI Components',
       content: 'docs/ui.md',
       components: 'src/components/**/*.tsx',
