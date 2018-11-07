@@ -18,11 +18,13 @@ interface ButtonProps {
 }
 
 const ButtonComponent = withTheme(styled('button')<ButtonProps>`
-    border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     color: ${props => props.type === 'primary' ? props.theme.foregroundColor : props.theme.backgroundColor };
+    border-style: solid;
+    border-width: 2px;
+    border-color: ${props => props.type === 'primary' ? props.theme.foregroundColor : props.theme.backgroundColor };
     background: ${props => props.type === 'primary' ? props.theme.backgroundColor : props.theme.foregroundColor};
     
     &[disabled] {
