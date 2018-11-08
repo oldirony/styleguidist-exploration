@@ -15,9 +15,7 @@ const themes = [
 
 const ExampleWrapper = withTheme(styled('div')`
   background: ${props => props.theme.backgroundColor};
-  margin: -20px;
   padding: 20px;
-  border: 1px solid #f1f1f1;
 `);
 
 export default class ThemeWrapper extends React.PureComponent<null, IState> {

@@ -1,17 +1,29 @@
 const path = require('path');
 const spaceFactor = 8;
 module.exports = {
-  theme: {
-    spaceFactor,
-    space: [
-      spaceFactor / 2, // 4
-      spaceFactor, // 8
-      spaceFactor * 2, // 16
-      spaceFactor * 3, // 24
-      spaceFactor * 8, // 32
-      spaceFactor * 12, // 40
-      spaceFactor * 20, // 48
-    ]
+  styles: {
+    Section: {
+      root: {
+        borderBottom: '3px solid #f4f4f4',
+        marginBottom: 50
+      }
+    },
+    Examples: {
+      root: {
+        marginBottom: 75
+      }
+    },
+    Playground: {
+      preview: {
+        padding: 0,
+        marginBottom: 10,
+      }
+    },
+    SectionHeading: {
+      wrapper: {
+        marginBottom: 20,
+      }
+    }
   },
   propsParser: require("react-docgen-typescript").withDefaultConfig().parse,
   webpackConfig: require('./config/webpack.config.dev'),
