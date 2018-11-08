@@ -11,6 +11,8 @@ interface HeaderProps {
     siteName: string;
     /** Url of the homepage, appearing as href of the main link */
     homepageLink: string;
+    /** @deprecated Use siteName instead */
+    text?: string;
 }
 
 const HeaderLink = withTheme(styled('a')<HeaderLinkProps>`
@@ -37,13 +39,39 @@ const HeaderComponent = styled('header')`
 export class Header extends React.PureComponent<HeaderProps> {
     static defaultProps = {};
 
+    /**
+     * Use this method to extend
+     *
+     * @public
+     */
+    public extend() {
+        console.log('extend', this);
+    }
+
+    /**
+     * Use this method to shrink
+     *
+     * @public
+     */
+    public shrink() {
+        console.log('shrink', this);
+    }
+
+    /**
+     * @public
+     * @deprecated refer to .extend instead.
+     */
+    public increase() {
+        this.extend();
+    }
+
     render() {
-        const { homepageLink, siteName } = this.props;
+        const { homepageLink, siteName, text } = this.props;
 
         return (
             <HeaderComponent>
                 <HeaderLink href={homepageLink}>
-                    {siteName}
+                    {siteName || text}
                 </HeaderLink>
                 {this.props.children}
             </HeaderComponent>
