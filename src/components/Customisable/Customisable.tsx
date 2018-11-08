@@ -11,6 +11,15 @@ interface CustomisableInterface {
  * Example component decorated with a `@overwriteDefaultProps` function.
  */
 
+const StyledDiv = styled('div')`
+  font-family: 'helvetica', sans-serif;
+  border: 3px solid tomato;
+  display: inline-block;
+  padding: 16px;
+  background: ivory;
+  border-radius: 10px 0 10px 0;
+`;
+
 @overwriteDefaultProps
 class Customisable extends React.PureComponent<CustomisableInterface>{
     static defaultProps = {
@@ -21,9 +30,9 @@ class Customisable extends React.PureComponent<CustomisableInterface>{
         const { label } = this.props;
 
         return (
-            <div>
+            <StyledDiv>
                 {label}
-            </div>
+            </StyledDiv>
         )
     }
 }
