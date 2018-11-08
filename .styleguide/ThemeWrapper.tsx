@@ -43,7 +43,10 @@ export default class ThemeWrapper extends React.PureComponent<null, IState> {
                         onChange={this.handleChange}
                     >
                             {themes.map(theme => (
-                                <option value={theme.name}>
+                                <option
+                                    value={theme.name}
+                                    key={theme.name}
+                                >
                                     {theme.name}
                                 </option>
                             ))}
