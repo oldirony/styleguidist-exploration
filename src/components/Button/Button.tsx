@@ -26,7 +26,7 @@ const ButtonComponent = withTheme(styled('button')<ButtonProps>`
     border-width: 2px;
     border-color: ${props => props.type === 'primary' ? props.theme.foregroundColor : props.theme.backgroundColor };
     background: ${props => props.type === 'primary' ? props.theme.backgroundColor : props.theme.foregroundColor};
-    
+
     &[disabled] {
         opacity: 0.3;
         cursor: not-allowed;
@@ -34,7 +34,7 @@ const ButtonComponent = withTheme(styled('button')<ButtonProps>`
 `);
 
 /**
- * Description of the button component here
+ * This is component is used for ...
  */
 export const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     const { type, disabled, children } = props;
@@ -53,4 +53,3 @@ Button.defaultProps = {
     type: "primary",
     disabled: false,
 };
-

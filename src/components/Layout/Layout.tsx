@@ -12,13 +12,13 @@ const FancyDiv = styled('div')`
 
   & > * > * {
     flex: 1 1 auto;
-    padding: 20px;  
+    padding: 20px;
   }
 
   & > * > *:nth-child(2n) {
       background: #fafafa;
   }
-  
+
   & > * > *:nth-child(2n - 1) {
       background: ivory;
   }

@@ -30,6 +30,7 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, '.styleguide/ThemeWrapper'),
   },
+  skipComponentsWithoutExample: true,
   sections: [
     {
       name: 'Introduction',
